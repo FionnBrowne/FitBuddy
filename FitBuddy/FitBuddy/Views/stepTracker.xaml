@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitBuddy.Views.stepTracker"
+             
+             xmlns:vm="clr-namespace:FitBuddy.ViewModels"
+             Title="{Binding Title}">
+    
+    <ContentPage.BindingContext>
+        <vm:stepTrackerViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--Page Level Resources: Compatibile with Xamarin Live Player -->
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+  <!--  <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackLayout BackgroundColor="{StaticResource Accent}" VerticalOptions="FillAndExpand" HorizontalOptions="Fill">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center">
+                <ContentView Padding="0,40,0,40" VerticalOptions="FillAndExpand">
+                    <Image Source="xamarin_logo.png" VerticalOptions="Center" HeightRequest="64" />
+                </ContentView>
+            </StackLayout>
+        </StackLayout>
+        <ScrollView Grid.Row="1">
+            <StackLayout Orientation="Vertical" Padding="16,40,16,40" Spacing="10">
+                <Label FontSize="22">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="AppName" FontAttributes="Bold" FontSize="22" />
+                                <Span Text=" " />
+                                <Span Text="1.0" ForegroundColor="{StaticResource LightTextColor}" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="This app is written in C# and native APIs using the" />
+                                <Span Text=" " />
+                                <Span Text="Xamarin Platform" FontAttributes="Bold" />
+                                <Span Text="." />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="It shares code with its" />
+                                <Span Text=" " />
+                                <Span Text="iOS, Android, and Windows" FontAttributes="Bold" />
+                                <Span Text=" " />
+                                <Span Text="versions." />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <Button Margin="0,10,0,0" Text="Learn more" Command="{Binding OpenWebCommand}" BackgroundColor="{StaticResource Primary}" TextColor="White" />
+            </StackLayout>
+        </ScrollView>
+    </Grid> -->
+    <ScrollView>
+        <Grid x:Name="GrdContentPage" BackgroundColor="DarkGray" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="45"/>
+
+      
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+        <Label Text="  Enter Details"  TextColor="Orange" FontAttributes="Bold" FontSize="20" BackgroundColor="Black"
+               HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"/>
+
+        <Label Text=" Enter Your Height (cm)" TextColor="Black"  FontSize="17" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+            <Entry x:Name="EntryHeight" Placeholder="00cm"  FontSize ="17" TextColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="1" Grid.Column="3" />
+
+            <Label Text=" Enter Distance walked (meters)"  TextColor="Black" FontSize="17" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" />
+            <Entry x:Name="EntryDistance" Placeholder="0m" FontSize="17"  TextColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="2" Grid.Column="3" />
+
+            <Label Text=" Enter time taken(min)"  TextColor="Black" FontSize="17" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" />
+            <Entry x:Name="EntryTime" Placeholder="0min" FontSize="17"  TextColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="3" Grid.Column="3" />
+
+            <Label Text="  Results"  TextColor="Orange" FontAttributes="Bold" FontSize="22" BackgroundColor="Black"
+               HorizontalOptions="FillAndExpand" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4"/>
+
+            <Label Text=" Steps taken"  TextColor="Black" FontSize="17" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" />
+            <Label x:Name="stepsT" Text=" "  TextColor="Black" FontSize="17" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="6" Grid.Column="3" />
+
+            <Label Text=" Steps per minute"  TextColor="Black" FontSize="17" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" />
+            <Label  x:Name="stepsPM" Text=" "  TextColor="Black" FontSize="17" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="7" Grid.Column="3" />
+
+            <Label Text=" Average stride length"  TextColor="Black" FontSize="17" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="3" />
+            <Label  x:Name="averageSL" Text=" "  TextColor="Black" FontSize="17" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="8" Grid.Column="3" />
+
+
+            <Button x:Name="btnCalculate" Margin="0,10,0,0"  Text="Calculate"  BackgroundColor="{StaticResource Primary}" TextColor="White" Grid.Row="9" Grid.Column="1" Grid.ColumnSpan="2"  
+                    Clicked="btn_clicked"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>

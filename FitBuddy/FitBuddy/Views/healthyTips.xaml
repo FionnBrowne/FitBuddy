@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FitBuddy.Views.healthyTips"
+             
+             xmlns:vm="clr-namespace:FitBuddy.ViewModels"
+             Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:healthyTipsViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--Page Level Resources: Compatible with Xamarin Live Player -->
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <Grid x:Name="GrdContentPage" BackgroundColor="DarkGray" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="52"/>
+            <RowDefinition Height="45"/>
+
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+            <Label Text="  Whats this app for" TextColor="Orange" FontSize="16" FontAttributes="Bold" BackgroundColor="black"
+               HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3"/>
+            
+            <Label Text="  This App is here to help with tracking BMI and how  much activity you achieve a day,
+ Body Mass Index (BMI)  is a person's weight in kilograms divided by the square  of height in meters.
+  A  high BMI can be an indicator of high body fatness.
+ BMI can be used to screen for weight  categories that may lead to health problems but it is not  diagnostic of the body fatness or health of an individual."
+                   TextColor="Orange" FontSize="16" BackgroundColor="gray"
+               HorizontalOptions="FillAndExpand" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3"/>
+
+            <Label Text="  Bruning fat" TextColor="Orange" FontSize="16" FontAttributes="Bold" BackgroundColor="black"
+               HorizontalOptions="FillAndExpand" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3"/>
+            
+            <Label Text=" To loose weight you can slash calories but to lose fat, it's always a much slower process – and one best addressed through both diet and exercise.
+  Aim for a mixture of compound exercises (squats, lunges, press ups), isolation exercises (hamstring curls, leg extensions, lateral raises) and a bit of cardio.
+  Ultimately, the more muscle you have, the faster you'll burn fat, and the more time you spend working out at around 75% of your maximum heart rate,
+the greater the after-burn effect – which basically means the longer you'll be burning calories after you've left the gym."
+                   TextColor="Orange"  FontSize="16" BackgroundColor="gray"
+               HorizontalOptions="FillAndExpand" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="5"/>
+            
+            <Label Text="  Diet" TextColor="Orange" FontSize="16" FontAttributes="Bold" BackgroundColor="black"
+               HorizontalOptions="FillAndExpand" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="1"/>
+
+            <Label Text="  High-fiber carbs are a good choice because they can help you lose body fat while improving your digestion and cholesterol numbers.
+You can look for low-fat, low-sugar 'dessert' type foods, including those that use stevia. And to keep a plan like this from becoming too bland, use seasonings.
+They add very few calories to your meal. The key here is to not go above your daily calorie allotment. Having said that, it is common to 'zigzag' calorie totals. 
+If you have a daily calorie allotment of 2,200, you can consume 1,800 one day, 2,400 the next, 1,950 the day after—as long as you're averaging 2,200 over the course of the week.
+  As for cheat days or meals, I personally would rather have a healthy eating plan I can stick with than to go nuts one day a week and eat like a pig.
+Not to mention that once you cheat it's hard to return to a strict diet the next day."
+                   TextColor="Orange"  FontSize="16" BackgroundColor="gray"
+               HorizontalOptions="FillAndExpand" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="5"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>

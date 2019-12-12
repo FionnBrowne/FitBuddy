@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:FitBuddy.ViewModels"
+             x:Class="FitBuddy.Views.BMICal">
+    <ContentPage.BindingContext>
+        <vm:stepTrackerViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--Page Level Resources: Compatibile with Xamarin Live Player -->
+            <Color x:Key="Primary">#2196F3</Color>
+            <Color x:Key="Accent">#96d1ff</Color>
+            <Color x:Key="LightTextColor">#999999</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <Grid x:Name="GrdContentPage" BackgroundColor="DarkGray" >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="52"/>
+                <RowDefinition Height="52"/>
+                <RowDefinition Height="52"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="52"/>
+ 
+                <RowDefinition Height="45"/>
+
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+
+            <Label Text="  Enter values"  TextColor="Orange" FontAttributes="Bold" FontSize="20" BackgroundColor="Black"
+               HorizontalOptions="FillAndExpand" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4"/>
+
+            <Label Text=" Enter Your Height (cm)" TextColor="Black"  FontSize="17" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+            <Entry x:Name="EntryHeight" Placeholder="00cm"  FontSize ="17" TextColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="1" Grid.Column="3" />
+
+            <Label Text=" Enter Weight (KG)"  TextColor="Black" FontSize="17" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" />
+            <Entry x:Name="EntryWeight" Placeholder="0KG" FontSize="17"  TextColor="Black" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="2" Grid.Column="3" />
+            
+            <Label Text="  Results"  TextColor="Orange" FontAttributes="Bold" FontSize="22" BackgroundColor="Black"
+               HorizontalOptions="FillAndExpand" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4"/>
+
+            <Label Text=" Your BMI is "  TextColor="Black" FontSize="17" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" />
+            <Label x:Name="BMI" Text=" "  TextColor="Black" FontSize="17" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="4" Grid.Column="3" />
+
+            <Label x:Name="position" Text=" "  TextColor="Black" FontSize="17" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" 
+               Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" />
+
+
+
+
+            <Button x:Name="btnCalculate" Margin="0,10,0,0"  Text="Calculate"  BackgroundColor="{StaticResource Primary}" TextColor="White" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2"  
+                    Clicked="btn_clicked"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>
